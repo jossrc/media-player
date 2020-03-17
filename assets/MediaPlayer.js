@@ -19,13 +19,13 @@ MediaPlayer.prototype.pause = function() {
     this.media.pause();
 }
 
-MediaPlayer.prototype.toggle = function(button) {
+MediaPlayer.prototype.togglePlay = function(button) {
     if (this.media.paused) {
         this.play();
-        button.textContent = `Pause`
+        button.textContent = `Pause`;
     } else {
         this.pause();
-        button.textContent = `Play`
+        button.textContent = `Play`;
     }
 }
 
@@ -35,6 +35,16 @@ MediaPlayer.prototype.mute = function() {
 
 MediaPlayer.prototype.unmute = function() {
     this.media.muted = false;
+}
+
+MediaPlayer.prototype.toggleMute = function(button) {
+    if (this.media.muted) {
+        this.unmute();
+        button.textContent = `Mute`;
+    } else {
+        this.mute();
+        button.textContent = `Unmute`;
+    }
 }
 
 export default MediaPlayer;
