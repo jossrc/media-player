@@ -12,7 +12,11 @@ MediaPlayer.prototype._initPlugins = function() {
         media: this.media,
         get muted() {
             return this.media.muted;
+        },
+        set muted(value) {
+            this.media.muted = value;
         }
+
     }
 
     player.muted()
