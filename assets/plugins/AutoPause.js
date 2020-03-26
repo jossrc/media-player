@@ -2,7 +2,7 @@ class AutoPause {
 
     constructor() {
         this.threshold = 0.25
-
+        this.handlerIntersection = this.handlerIntersection.bind(this)
     }
 
     run(player) {
@@ -22,7 +22,6 @@ class AutoPause {
         if (isVisible) {
             this.player.play()
         } else {
-
             this.player.pause()
         }
 
